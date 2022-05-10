@@ -5,8 +5,9 @@ RUN apk -v --no-cache --update add \
   ffmpeg \
   gifsicle \
   make
-  
-ADD Makefile .
 
 WORKDIR /work
+  
+COPY Makefile /work/
+
 

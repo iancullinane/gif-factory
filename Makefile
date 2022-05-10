@@ -8,7 +8,7 @@ TARGET  := $(shell basename `pwd`)
 PROJECT_NAME?=application
 
 # Create the target lists
-SOURCES := $(wildcard *.mov)
+SOURCES := $(wildcard /tmp/*.mov)
 TARGET_DIR := ${DIR}/output/
 
 export # make above variables available in subshells
@@ -22,7 +22,7 @@ all:
 	@echo ""
 
 # patsubst to make targets for the output, based on the input names
-destfiles := $(patsubst %.mov,output/%.gif,$(SOURCES))
+destfiles := $(patsubst /tmp/%.mov,output/%.gif,$(SOURCES))
 destination: $(destfiles)
 
 gifs: $(destfiles)
