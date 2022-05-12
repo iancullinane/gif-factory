@@ -1,0 +1,14 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: docker push
+    image: plugins/docker
+    settings:
+      repo: eignhpants/gif-factory
+      username:
+        from_secret: dh_user_name
+      password:
+        from_secret: dh_pw
+    publish:
+      image: eignhpants/gif-factory
